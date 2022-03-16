@@ -302,3 +302,16 @@ function reset(){
   pl1.visible=true
   pl2.visible=true
 }
+function Donate(){
+  scorep1=0
+  scorep2=0
+  p1health=10
+  p2health=10
+  gamestate = 0
+  gameover.visible=false
+  restart.visible=false
+  tank.visible=false
+  helicopter.visible=false
+  pl1.visible=false
+  pl2.visible=false
+}
