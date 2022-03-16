@@ -10,12 +10,14 @@ var p1bullets,p2bullets;
 var scorep1, scorep2, p1health, p2health;
 var gameover,restart,overimg,resetimg;
 var startsound, gamesound;
+var dont;
 gamestate=0
 scorep1 = 0
 scorep2 = 0
 p1health = 10
 p2health = 10
 function preload(){
+  dont = loadImage("giphyf.gif")
   air_ = loadAnimation("helicopter-0.png","helicopter-1.png","helicopter-2.png","helicopter-3.png","helicopter-4.png","helicopter-5.png","helicopter-6.png","helicopter-7.png","helicopter-8.png","helicopter-9.png")
   tank_ = loadAnimation("tank-0.png","tank-1.png","tank-2.png","tank-3.png","tank-4.png","tank-5.png","tank-6.png","tank-7.png")
   background0 = loadImage("city0.jpg")
@@ -187,6 +189,7 @@ function draw() {
     pl2.visible=false
     gameover.visible=true
     restart.visible=true
+    dont.visible=true
     ground.x=450
     ground.setVelocity(0,0)
     enemygroup1.destroyEach()
@@ -198,6 +201,9 @@ function draw() {
     if(mousePressedOver(restart)){
        reset()
     }   
+    if(mousePressedOver(dont)){
+       donate()
+    }  
   }
   
   drawSprites()
@@ -314,4 +320,5 @@ function Donate(){
   helicopter.visible=false
   pl1.visible=false
   pl2.visible=false
+  dont.visible=true
 }
