@@ -72,7 +72,7 @@ function setup() {
   restart = createSprite(450,250)
   restart.addImage(resetimg)
   restart.scale=0.3
-  restart.visible=true
+  restart.visible=false
   enemygroup1 = new Group()
   enemygroup3 = new Group()
   enemygroup2 = new Group()
@@ -196,6 +196,7 @@ function draw() {
     enemygroup4.destroyEach()
     tank.visible=false
     helicopter.visible=false
+    restart.visible=false
     if(mousePressedOver(restart)){
        reset()
     }   
